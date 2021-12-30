@@ -6,7 +6,7 @@ from textblob import TextBlob
 import matplotlib.pyplot as plt
 import streamlit as st
 
-st.write('#Twitter Sentiment Analysis')
+st.write("""# Twitter Sentiment Analysis App""")
 
 def authenticate():
   client  = tweepy.Client(bearer_token = config.BEARER_TOKEN,
@@ -46,9 +46,9 @@ def get_tweets(query, number_of_tweets):
   #neutral = format(percentage(neutral, number_of_tweets), '.2f')
   
   return positive, negative, neutral
-st.write('##Here you can enter the keyword you would like to check the sentiment of in real time.')
+st.write("""## Here you can enter the keyword you would like to check the sentiment of in real time.""")
 keyword = st.text_input("Keyword", 'Bitcoin')
-st.write('##Here you can enter the number of tweets the Twitter API should extract concerning the specific keyword.')
+st.write("""## Here you can enter the number of tweets the Twitter API should extract concerning the specific keyword.""")
 number_of_tweets = st.slider('Number of Tweets', min_value=100, max_value=500, value=100, step=30)
 pos, neg, neu = get_tweets(keyword, number_of_tweets)
 
