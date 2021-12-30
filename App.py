@@ -40,22 +40,20 @@ def get_tweets(query, number_of_tweets):
       positive += 1
     tweets_list.append(tweet.text)
 
-  positive = format(percentage(positive, number_of_tweets), '.2f')
-  negative = format(percentage(negative, number_of_tweets), '.2f')
-  neutral = format(percentage(neutral, number_of_tweets), '.2f')
+  #positive = format(percentage(positive, number_of_tweets), '.2f')
+  #negative = format(percentage(negative, number_of_tweets), '.2f')
+  #neutral = format(percentage(neutral, number_of_tweets), '.2f')
   
   return positive, negative, neutral
 
-keyword = input("Enter the keyword to search for: ")
-number_of_tweets = int(input("Enter the number of tweets to search for: "))
+keyword = st.text_input("Keyword", 'Bitcoin')
+number_of_tweets = int(st.text_input("Keyword", 'Bitcoin'))
 pos, neg, neu = get_tweets(keyword, number_of_tweets)
 
 labels  = ['Positive ['+str(pos)+'%]','Neutral ['+str(neu)+'%]','Negative ['+str(neg)+'%]']
 sizes = [pos, neu, neg]
-colors = ['yellowgreen', 'gold', 'red']
-patches, texts = plt.pie(sizes, colors = colors)
-plt.legend(patches, labels, loc = 'best')
-plt.title("Sentiment Analysis")
-plt.axis('equal')
-plt.tight_layout()
-plt.show()
+fig1, ax1 = plt.subplots()
+ax1.pie(sizes, labels=labels, autopct='%1.1f%%',
+        shadow=True, startangle=90)
+ax1.axis('equal')  # Equal aspect ratio ensures that pie is drawn as a circle.
+st.pyplot(fig1)
