@@ -1,2 +1,2 @@
 tweepy==4.4.0
-textblob==0.7.0
+TextBlob==0.7.0
