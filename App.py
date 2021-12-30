@@ -47,7 +47,7 @@ def get_tweets(query, number_of_tweets):
   return positive, negative, neutral
 
 keyword = st.text_input("Keyword", 'Bitcoin')
-number_of_tweets = int(st.text_input("Keyword", 'Bitcoin'))
+number_of_tweets = st.slider('Seconds', min_value=100, max_value=500, value=100, step=30)
 pos, neg, neu = get_tweets(keyword, number_of_tweets)
 
 labels  = ['Positive ['+str(pos)+'%]','Neutral ['+str(neu)+'%]','Negative ['+str(neg)+'%]']
