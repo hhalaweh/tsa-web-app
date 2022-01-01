@@ -6,7 +6,7 @@ from textblob import TextBlob
 import matplotlib.pyplot as plt
 import streamlit as st
 
-st.write("""# Twitter Sentiment Analysis App""")
+st.title("""# Twitter Sentiment Analysis App""")
 
 def authenticate():
   client  = tweepy.Client(bearer_token = config.BEARER_TOKEN,
