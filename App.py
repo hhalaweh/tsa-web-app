@@ -85,4 +85,4 @@ if(result):
   ax1.axis('equal')  # Equal aspect ratio ensures that pie is drawn as a circle.
   st.pyplot(fig1)
   st.subheader("Extracted Tweet Example")
-  t = Tweet("https://twitter.com/OReillyMedia/status/901048172738482176").component()
+  t = get_html_tweet("https://twitter.com/OReillyMedia/status/901048172738482176").component()
