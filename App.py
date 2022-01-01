@@ -50,12 +50,15 @@ st.write("""### Here you can enter the keyword you would like to check the senti
 keyword = st.text_input("Keyword", 'Bitcoin')
 st.write("""### Here you can enter the number of tweets the Twitter API should extract concerning the specific keyword.""")
 number_of_tweets = st.slider('Number of Tweets', min_value=100, max_value=500, value=100, step=30)
-pos, neg, neu = get_tweets(keyword, number_of_tweets)
+result = st.button("Analyze")
 
-labels  = ['Positive ['+str(pos)+'%]','Neutral ['+str(neu)+'%]','Negative ['+str(neg)+'%]']
-sizes = [pos, neu, neg]
-fig1, ax1 = plt.subplots()
-ax1.pie(sizes, labels=labels, autopct='%1.1f%%',
-        shadow=True, startangle=90)
-ax1.axis('equal')  # Equal aspect ratio ensures that pie is drawn as a circle.
-st.pyplot(fig1)
+if(result):
+  pos, neg, neu = get_tweets(keyword, number_of_tweets)
+
+  labels  = ['Positive ['+str(pos)+'%]','Neutral ['+str(neu)+'%]','Negative ['+str(neg)+'%]']
+  sizes = [pos, neu, neg]
+  fig1, ax1 = plt.subplots()
+  ax1.pie(sizes, labels=labels, autopct='%1.1f%%',
+          shadow=True, startangle=90)
+  ax1.axis('equal')  # Equal aspect ratio ensures that pie is drawn as a circle.
+  st.pyplot(fig1)
