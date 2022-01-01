@@ -68,9 +68,9 @@ st.title("Stock Prediction using Twitter Sentiment Analysis Web App")
 st.subheader("""Twitter sentiment analysis web application developed for **Software Engineering** project 2021-2022""")
 st.markdown('##')
 
-st.write("""Enter the name of the stock/financial asset you would like to check the sentiment of in real time.""")
+st.write("""**Enter the name of the stock/financial asset you would like to check the sentiment of in real time.**""")
 keyword = st.text_input("Keyword", 'Bitcoin')
-st.write("""Enter the number of tweets the Twitter API should extract concerning the specific keyword.""")
+st.write("""**Enter the number of tweets the Twitter API should extract concerning the specific keyword.**""")
 number_of_tweets = st.slider('Number of Tweets', min_value=100, max_value=500, value=100, step=30)
 result = st.button("Analyze")
 
