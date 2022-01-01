@@ -7,7 +7,7 @@ import matplotlib.pyplot as plt
 import streamlit as st
 
 st.title("Stock Prediction using Twitter Sentiment Analysis Web App")
-st.write("""##Twitter sentiment analysis application developed for **Software Engineering** project 2021-2022""")
+st.subheader("""Twitter sentiment analysis web application developed for **Software Engineering** project 2021-2022""")
 
 def authenticate():
   client  = tweepy.Client(bearer_token = config.BEARER_TOKEN,
