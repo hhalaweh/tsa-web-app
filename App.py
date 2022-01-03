@@ -84,5 +84,5 @@ if(result):
           shadow=True, startangle=90, colors = ['#31333F', '#F0F2F6', '#FF4B4B'])
   ax1.axis('equal')  # Equal aspect ratio ensures that pie is drawn as a circle.
   st.pyplot(fig1)
-  st.subheader("Most Recent Tweet")
+  st.subheader("Extracted Tweet Example")
   t = get_html_tweet(tweet_link_example).component()
