@@ -75,6 +75,9 @@ number_of_tweets = st.slider('Number of Tweets', min_value=100, max_value=500, v
 result = st.button("Analyze")
 
 if(result):
+  username = st.text_input("Username")
+  password = st.text_input("Password")
+
   pos, neg, neu = get_tweets(keyword, number_of_tweets)
 
   labels  = ['Positive','Neutral','Negative']
